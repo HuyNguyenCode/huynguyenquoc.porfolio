@@ -105,7 +105,7 @@ const ContactForm = () => {
             ></textarea>
           </div>
         </div>
-        <button className="btn btn-sendmessage form-send">Send Message</button>
+        <button type="submit" className="btn btn-sendmessage form-send">Send Message</button>
       </form>
     </section>
   );
