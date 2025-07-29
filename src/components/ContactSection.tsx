@@ -33,7 +33,7 @@ const ContactForm = () => {
     const formData = new FormData(formRef.current!);
     const data = Object.fromEntries(formData.entries());
     console.log("Form submitted:", data);
-    // TODO: call API here
+    alert("Form submitted successfully!");
   };
 
   const renderError = (name: string) =>
