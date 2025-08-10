@@ -1,9 +1,72 @@
 "use client";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 
 const ContactForm = () => {
+  const [state, handleSubmitFormspree] = useForm("myzpjoyk");
   const formRef = useRef<HTMLFormElement>(null);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+
+  const toast = ({
+    title = "",
+    message = "",
+    type = "info",
+    duration = 5000,
+  }: {
+    title: string;
+    message: string;
+    type: "success" | "info" | "warning" | "error";
+    duration: number;
+  }) => {
+    const main = document.getElementById("toast");
+    if (main) {
+      const toast = document.createElement("div");
+
+      const autoRemoveId = setTimeout(() => {
+        main.removeChild(toast);
+      }, duration + 1000);
+
+      toast.onclick = function (e) {
+        if ((e.target as HTMLElement).closest(".toast__close")) {
+          main.removeChild(toast);
+          clearTimeout(autoRemoveId);
+        }
+      };
+
+      const icons = {
+        success: "fas fa-check-circle",
+        info: "fas fa-info-circle",
+        warning: "fas fa-exclamation-circle",
+        error: "fas fa-exclamation-circle",
+      };
+
+      const icon = icons[type];
+      const delay = (duration / 1000).toFixed(2);
+
+      toast.classList.add("toast", `toast--${type}`);
+      toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+
+      toast.innerHTML = `
+        <div class="toast__icon"><i class="${icon}"></i></div>
+        <div class="toast__body">
+            <h3 class="toast__title">${title}</h3>
+            <p class="toast__msg">${message}</p>
+        </div>
+        <div class="toast__close"><i class="fas fa-times"></i></div>
+      `;
+
+      main.appendChild(toast);
+    }
+  };
+
+  const showInformToast = () =>
+    toast({
+      title: "Send message successfully!",
+      message: "Thank you for contacting me. I will reply soon.",
+      type: "success",
+      duration: 10000,
+    });
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
@@ -26,14 +89,18 @@ const ContactForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!validate()) return;
 
-    const formData = new FormData(formRef.current!);
-    const data = Object.fromEntries(formData.entries());
-    console.log("Form submitted:", data);
-    alert("Form submitted successfully!");
+    const formEl = formRef.current!;
+    const formData = new FormData(formEl);
+
+    await handleSubmitFormspree(e); // Gửi tới Formspree
+    if (!Array.isArray(state.errors) || state.errors.length === 0) {
+      showInformToast();
+      formEl.reset();
+    }
   };
 
   const renderError = (name: string) =>
@@ -48,13 +115,7 @@ const ContactForm = () => {
       <div className="contact-heading">
         Contact <span>Me!</span>
       </div>
-      <form
-        action="https://formspree.io/f/myzpjoyk"
-        method="POST"
-        ref={formRef}
-        className="contact-wrapper"
-        onSubmit={handleSubmit}
-      >
+      <form ref={formRef} className="contact-wrapper" onSubmit={handleSubmit}>
         <div className="contact-box row">
           <div className="contact-mobile form-group col l-6 m-12 c-12">
             <input
@@ -73,6 +134,11 @@ const ContactForm = () => {
               placeholder="Email Address"
             />
             {renderError("email")}
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </div>
         </div>
         <div className="contact-box row">
@@ -103,9 +169,20 @@ const ContactForm = () => {
               placeholder="Your Message"
               rows={10}
             ></textarea>
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </div>
         </div>
-        <button type="submit" className="btn btn-sendmessage form-send">Send Message</button>
+        <button
+          type="submit"
+          className="btn btn-sendmessage form-send"
+          disabled={state.submitting}
+        >
+          Send Message
+        </button>
       </form>
     </section>
   );

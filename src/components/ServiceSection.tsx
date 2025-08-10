@@ -1,74 +1,70 @@
 "use client";
 
-import { useEffect } from "react";
-
 export default function ServicesSection() {
-  useEffect(() => {
-    // Toast auto remove + DOM insertion logic
-    const toast = ({
-      title = "",
-      message = "",
-      type = "info",
-      duration = 5000,
-    }: {
-      title: string;
-      message: string;
-      type: "success" | "info" | "warning" | "error";
-      duration: number;
-    }) => {
-      const main = document.getElementById("toast");
-      if (main) {
-        const toast = document.createElement("div");
+  // Toast auto remove + DOM insertion logic
+  const toast = ({
+    title = "",
+    message = "",
+    type = "info",
+    duration = 5000,
+  }: {
+    title: string;
+    message: string;
+    type: "success" | "info" | "warning" | "error";
+    duration: number;
+  }) => {
+    const main = document.getElementById("toast");
+    if (main) {
+      const toast = document.createElement("div");
 
-        // Auto remove
-        const autoRemoveId = setTimeout(() => {
+      // Auto remove
+      const autoRemoveId = setTimeout(() => {
+        main.removeChild(toast);
+      }, duration + 1000);
+
+      // Manual remove
+      toast.onclick = function (e) {
+        if ((e.target as HTMLElement).closest(".toast__close")) {
           main.removeChild(toast);
-        }, duration + 1000);
+          clearTimeout(autoRemoveId);
+        }
+      };
 
-        // Manual remove
-        toast.onclick = function (e) {
-          if ((e.target as HTMLElement).closest(".toast__close")) {
-            main.removeChild(toast);
-            clearTimeout(autoRemoveId);
-          }
-        };
+      const icons = {
+        success: "fas fa-check-circle",
+        info: "fas fa-info-circle",
+        warning: "fas fa-exclamation-circle",
+        error: "fas fa-exclamation-circle",
+      };
 
-        const icons = {
-          success: "fas fa-check-circle",
-          info: "fas fa-info-circle",
-          warning: "fas fa-exclamation-circle",
-          error: "fas fa-exclamation-circle",
-        };
+      const icon = icons[type];
+      const delay = (duration / 1000).toFixed(2);
 
-        const icon = icons[type];
-        const delay = (duration / 1000).toFixed(2);
+      toast.classList.add("toast", `toast--${type}`);
+      toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
 
-        toast.classList.add("toast", `toast--${type}`);
-        toast.style.animation = `slideInLeft ease .3s, fadeOut linear 1s ${delay}s forwards`;
+      toast.innerHTML = `
+        <div class="toast__icon"><i class="${icon}"></i></div>
+        <div class="toast__body">
+            <h3 class="toast__title">${title}</h3>
+            <p class="toast__msg">${message}</p>
+        </div>
+        <div class="toast__close"><i class="fas fa-times"></i></div>
+      `;
 
-        toast.innerHTML = `
-          <div class="toast__icon"><i class="${icon}"></i></div>
-          <div class="toast__body">
-              <h3 class="toast__title">${title}</h3>
-              <p class="toast__msg">${message}</p>
-          </div>
-          <div class="toast__close"><i class="fas fa-times"></i></div>
-        `;
+      main.appendChild(toast);
+    }
+  };
 
-        main.appendChild(toast);
-      }
-    };
-
-    // Gắn function ra global (nếu muốn dùng onclick trong attribute)
-    (window as any).showInformToast = () =>
-      toast({
-        title: "Inform!",
-        message:
-          "Sorry for the inconvenience, but we're working on this feature!",
-        type: "info",
-        duration: 5000,
-      });
-  }, []);
+  // Gắn function ra global (nếu muốn dùng onclick trong attribute)
+  const showInformToast = () =>
+    toast({
+      title: "Inform!",
+      message:
+        "Sorry for the inconvenience, but we're working on this feature!",
+      type: "info",
+      duration: 5000,
+    });
 
   return (
     <section className="services grid wide" id="services">
@@ -105,7 +101,7 @@ export default function ServicesSection() {
               <p className="services-card_text">{item.desc}</p>
               <button
                 className="btn btn-readmore"
-                onClick={() => (window as any).showInformToast()}
+                onClick={() => showInformToast()}
               >
                 Read more
               </button>

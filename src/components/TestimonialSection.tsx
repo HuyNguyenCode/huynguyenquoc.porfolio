@@ -48,57 +48,19 @@ export default function Testimonial() {
                 </p>
               </div>
             </SwiperSlide>
-            {/* <SwiperSlide>
-              <div className="testimonial-card">
-                <Image
-                  className="testimonial-card_img"
-                  src="/assets/img/fpt-is-logo.png"
-                  alt="Jackson Levi"
-                  width={100}
-                  height={100}
-                />
-                <h1 className="testimonial-card_heading">Personal Mentor</h1>
-                <p className="testimonial-card_text">
-                  "Huy is not the kind of person who waits to be told what to do
-                  — he takes initiative, asks the right questions, and actively
-                  seeks feedback. He balances technical learning with a strong
-                  interest in business, especially product strategy and
-                  user-centric thinking. What I appreciate most is his attitude:
-                  humble, disciplined, and always willing to go beyond what's
-                  expected. A rare mix of thinker and doer."
-                </p>
-              </div>
-            </SwiperSlide> */}
-            {/*
-            <SwiperSlide>
-              <div className="testimonial-card">
-                <Image
-                  className="testimonial-card_img"
-                  src="/assets/img/testimonail_img1.png"
-                  alt="Jackson Levi"
-                  width={100}
-                  height={100}
-                />
-                <h1 className="testimonial-card_heading">Personal Mentor</h1>
-                <p className="testimonial-card_text">
-                  
-                </p>
-              </div>
-            </SwiperSlide>
-
             <SwiperSlide>
               <div className="testimonial-card">
                 <Image
                   className="testimonial-card_img"
                   src="/assets/img/startupwheel-logo.png"
-                  alt="Julian Grayson"
+                  alt="Jackson Levi"
                   width={100}
                   height={100}
                 />
                 <h1 className="testimonial-card_heading">
                   Startup Wheel 2021 Judge
                 </h1>
-                <p className="testimonial-card_text">
+                <p className="testimonial-card_text" style={{ color: "black" }}>
                   "The mentorship platform idea presented by Huy in Startup
                   Wheel 2021 was one of the most practical and well-positioned
                   concepts in the competition. He understood user pain points
@@ -114,16 +76,15 @@ export default function Testimonial() {
               <div className="testimonial-card">
                 <Image
                   className="testimonial-card_img"
-                  src="/assets/img/testimonail_img1.png"
-                  alt="Julian Grayson"
+                  src="/assets/img/uit-logo.png"
+                  alt="Jackson Levi"
                   width={100}
                   height={100}
                 />
                 <h1 className="testimonial-card_heading">
-                  {" "}
-                  Project Teammate, Social Network Project
+                  Project Teammate at UIT, Social Network Project
                 </h1>
-                <p className="testimonial-card_text">
+                <p className="testimonial-card_text" style={{ color: "black" }}>
                   "I had the chance to work with Huy on multiple school and side
                   projects, and he was always the person we could rely on. He
                   listens carefully, communicates clearly, and works with a calm
@@ -134,30 +95,6 @@ export default function Testimonial() {
                 </p>
               </div>
             </SwiperSlide>
-            <SwiperSlide>
-              <div className="testimonial-card">
-                <Image
-                  className="testimonial-card_img"
-                  src="/assets/img/testimonail_img1.png"
-                  alt="Julian Grayson"
-                  width={100}
-                  height={100}
-                />
-                <h1 className="testimonial-card_heading">
-                  {" "}
-                  Project Teammate, Social Network Project
-                </h1>
-                <p className="testimonial-card_text">
-                  "I had the chance to work with Huy on multiple school and side
-                  projects, and he was always the person we could rely on. He
-                  listens carefully, communicates clearly, and works with a calm
-                  and solution-oriented mindset. Even under tight deadlines, he
-                  stays focused and brings stability to the team. He’s not only
-                  skilled technically but also great at bridging people together
-                  to achieve a shared goal."
-                </p>
-              </div>
-            </SwiperSlide> */}
           </Swiper>
         </div>
       </div>
