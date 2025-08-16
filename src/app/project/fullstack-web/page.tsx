@@ -32,7 +32,7 @@ function ProjectFullstackPage() {
                       <div className={cx("swiper-image")}>
                         <Image
                           className={cx("project-image")}
-                          src="/assets/img/fs-project-1.png"
+                          src="/assets/img/fs-project/fs-project-1.png"
                           alt="Jackson Levi"
                           fill
                         />
@@ -42,7 +42,7 @@ function ProjectFullstackPage() {
                       <div className={cx("swiper-image")}>
                         <Image
                           className={cx("project-image")}
-                          src="/assets/img/fs-project-4.png"
+                          src="/assets/img/fs-project/fs-project-2.png"
                           alt="Jackson Levi"
                           fill
                         />
@@ -52,7 +52,7 @@ function ProjectFullstackPage() {
                       <div className={cx("swiper-image")}>
                         <Image
                           className={cx("project-image")}
-                          src="/assets/img/fs-project-5.png"
+                          src="/assets/img/fs-project/fs-project-3.png"
                           alt="Jackson Levi"
                           fill
                         />
@@ -62,7 +62,7 @@ function ProjectFullstackPage() {
                       <div className={cx("swiper-image")}>
                         <Image
                           className={cx("project-image")}
-                          src="/assets/img/fs-project-6.png"
+                          src="/assets/img/fs-project/fs-project-4.png"
                           alt="Jackson Levi"
                           fill
                         />
@@ -72,7 +72,7 @@ function ProjectFullstackPage() {
                       <div className={cx("swiper-image")}>
                         <Image
                           className={cx("project-image")}
-                          src="/assets/img/fs-project-7.png"
+                          src="/assets/img/fs-project/fs-project-5.png"
                           alt="Jackson Levi"
                           fill
                         />
@@ -82,7 +82,17 @@ function ProjectFullstackPage() {
                       <div className={cx("swiper-image")}>
                         <Image
                           className={cx("project-image")}
-                          src="/assets/img/fs-project-8.png"
+                          src="/assets/img/fs-project/fs-project-6.png"
+                          alt="Jackson Levi"
+                          fill
+                        />
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className={cx("swiper-image")}>
+                        <Image
+                          className={cx("project-image")}
+                          src="/assets/img/fs-project/fs-project-7.png"
                           alt="Jackson Levi"
                           fill
                         />
@@ -98,23 +108,13 @@ function ProjectFullstackPage() {
                         />
                       </div>
                     </SwiperSlide>
-                    <SwiperSlide>
-                      <div className={cx("swiper-image")}>
-                        <Image
-                          className={cx("project-image")}
-                          src="/assets/img/fs-project/fs-project-10.png"
-                          alt="Jackson Levi"
-                          fill
-                        />
-                      </div>
-                    </SwiperSlide>
                   </Swiper>
                 </div>
                 <div className={cx("project-image-right")}>
                   <div className={cx("project-image-grid")}>
                     <Image
                       className={cx("project-image")}
-                      src="/assets/img/fs-project/fs-project-4.png"
+                      src="/assets/img/fs-project/fs-project-8.png"
                       alt="Jackson Levi"
                       fill
                     />
