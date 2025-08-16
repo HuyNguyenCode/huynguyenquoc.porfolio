@@ -138,7 +138,7 @@ function ProjectFullstackPage() {
                   <div className={cx("project-image-grid")}>
                     <Image
                       className={cx("project-image")}
-                      src="/assets/img/fs-project/fs-project-8.png"
+                      src="/assets/img/fs-project/fs-project-2.png"
                       alt="Jackson Levi"
                       fill
                     />
