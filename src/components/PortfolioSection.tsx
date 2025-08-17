@@ -136,12 +136,13 @@ const PortfolioSection = () => {
               className="porfolio-card_background"
             />
             <div className="portfolio-card_content">
-              <h1 className="portfolio-card_heading">Web Full-stack</h1>
+              <h1 className="portfolio-card_heading">PHP Web Full-stack</h1>
               <p className="portfolio-card_text">
-                Here are a few full-stack web projects we've completed.
+                This is a pure PHP project—a website for hotel booking and
+                management, and admin management functionalities.
               </p>
               <button
-                onClick={showInformPortfolioToast}
+                onClick={() => goToProjectPage("web-php")}
                 className="btn-portfolio"
               >
                 <div className="btn-icon-portfolio">
@@ -176,8 +177,6 @@ const PortfolioSection = () => {
           </div>
         </div>
       </div>
-
-      {/* Bạn có thể copy-paste tương tự các div khác nếu cần hiển thị hết như bản gốc */}
     </section>
   );
 };
