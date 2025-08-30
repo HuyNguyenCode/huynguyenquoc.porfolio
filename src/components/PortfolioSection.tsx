@@ -112,13 +112,15 @@ const PortfolioSection = () => {
               height={250}
             />
             <div className="portfolio-card_content">
-              <h1 className="portfolio-card_heading">Application</h1>
+              <h1 className="portfolio-card_heading">
+                Java Android Application
+              </h1>
               <p className="portfolio-card_text">
-                Here are some samples of the work we've done for management
-                software projects.
+                Here are an android app we've done for weather monitoring and
+                forecasting.
               </p>
               <button
-                onClick={showInformPortfolioToast}
+                onClick={() => goToProjectPage("android-app")}
                 className="btn-portfolio"
               >
                 <div className="btn-icon-portfolio">
