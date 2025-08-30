@@ -46,12 +46,6 @@ export default function HomeSection() {
                 <i className="bx bxl-fb fa-brands fa-square-facebook"></i>
               </a>
               <a
-                href="https://twitter.com/HuyNguy45273147"
-                style={{ "--i": 8 } as any}
-              >
-                <i className="bx bxl-tt fa-brands fa-twitter"></i>
-              </a>
-              <a
                 href="https://github.com/HuyNguyenCode"
                 style={{ "--i": 9 } as any}
               >

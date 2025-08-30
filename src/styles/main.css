@@ -787,11 +787,13 @@ body {
   text-align: center;
   color: var(--pirmary-background-color);
   margin: 20px 0;
+  opacity: 1 !important;
 }
 
 .testimonial-card_text {
   color: var(--pirmary-background-color);
   font-size: 15px;
+  opacity: 1 !important;
 }
 
 .swiper-button-prev,

@@ -84,7 +84,10 @@ export default function Testimonial() {
                 <h1 className="testimonial-card_heading">
                   Project Teammate at UIT, Social Network Project
                 </h1>
-                <p className="testimonial-card_text" style={{ color: "black" }}>
+                <p
+                  className={"testimonial-card_text"}
+                  style={{ color: "black", opacity: 1 }}
+                >
                   "I had the chance to work with Huy on multiple school and side
                   projects, and he was always the person we could rely on. He
                   listens carefully, communicates clearly, and works with a calm

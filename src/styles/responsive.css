@@ -235,10 +235,12 @@
     
     .testimonial-card_heading {
         font-size: 30px;
+        opacity: 1;
     }
     
     .testimonial-card_text {
         font-size: 20px;
+        opacity: 1 !important
     }
 
     .contact-box {

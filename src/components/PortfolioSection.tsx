@@ -162,13 +162,15 @@ const PortfolioSection = () => {
               className="porfolio-card_background"
             />
             <div className="portfolio-card_content">
-              <h1 className="portfolio-card_heading">Web Design</h1>
+              <h1 className="portfolio-card_heading">
+                Data Analyst with Python
+              </h1>
               <p className="portfolio-card_text">
-                Several UX/UI projects we completed using HTML, CSS, and
-                ReactJS.
+                Social network data analysis project using Python (Deepwalk,
+                Logistic Regression, GraphSage).
               </p>
               <button
-                onClick={showInformPortfolioToast}
+                onClick={() => goToProjectPage("python-data")}
                 className="btn-portfolio"
               >
                 <div className="btn-icon-portfolio">

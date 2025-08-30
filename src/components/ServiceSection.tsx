@@ -99,12 +99,9 @@ export default function ServicesSection() {
               </div>
               <h1 className="services-card_heading">{item.title}</h1>
               <p className="services-card_text">{item.desc}</p>
-              <button
-                className="btn btn-readmore"
-                onClick={() => showInformToast()}
-              >
-                Read more
-              </button>
+              <a className="btn btn-readmore" href="#contact">
+                Contact me
+              </a>
             </div>
           </div>
         ))}

@@ -243,6 +243,7 @@
             }
           }
         }
+        .outcome,
         .feature-tech {
           margin-top: 25px;
           background-color: #ffffff;
@@ -256,11 +257,11 @@
             color: #1f2937;
             margin-bottom: 20px;
           }
-
+          .outcome-grid,
           .tech-grid {
             display: flex;
             flex-direction: column;
-
+            .outcome-row,
             .tech-row {
               display: grid;
               grid-template-columns: 1fr 2fr; // cột trái 1 phần, cột phải 2 phần
