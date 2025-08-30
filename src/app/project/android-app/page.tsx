@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-function ProjectFullstackPage() {
+function ProjectAndroidPage() {
   return (
     <>
       <section className="home tab-pane active">
@@ -502,4 +502,4 @@ function ProjectFullstackPage() {
   );
 }
 
-export default ProjectFullstackPage;
+export default ProjectAndroidPage;
